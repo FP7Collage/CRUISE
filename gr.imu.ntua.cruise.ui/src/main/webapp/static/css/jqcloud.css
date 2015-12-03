@@ -1,0 +1,547 @@
+div.jqcloud {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    color: #40AFCB;
+    overflow: hidden;
+    position: relative;
+    line-height: normal;
+}
+div.jqcloud a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+div.jqcloud a:hover {
+    color: #ebebeb;
+}
+div.jqcloud a:hover {
+    color: #d6d6d6;
+}
+div.jqcloud span {
+    padding: 0;
+}
+div.jqcloud span.img{
+border:1px solid #0000ff;
+}
+div.jqcloud span.w11 {
+	font-size: 4.0em;
+	color: #40AFCB;
+}
+div.jqcloud span.w10 {
+	font-size: 2.6em;
+	color: #40AFCB;
+ 
+}
+div.jqcloud span.w9 {
+	font-size: 2.4em;
+	color: #318499;
+ 
+}
+div.jqcloud span.w8 {
+	font-size: 2.2em;
+	color: #409cc9;
+ 
+}
+div.jqcloud span.w7 {
+	font-size: 2.0em;
+	color: #cee3ed;
+ 
+}
+div.jqcloud span.w6 {
+	font-size: 1.80em;
+	color: #425b6b;
+}
+div.jqcloud span.w5 {
+	font-size: 1.6em;
+	color: #62889a;
+}
+div.jqcloud span.w4 {
+	font-size: 1.4em;
+	color: #808080;
+ 
+}
+div.jqcloud span.w3 {
+	font-size: 1.2em;
+	color: #969696;
+ 
+}
+div.jqcloud span.w2 {
+	font-size: 1.0em;
+	color: #ababab;
+ 
+}
+div.jqcloud span.w1 {
+	font-size: 0.8em;
+	color: #bfbfbf;
+ 
+}
+
+
+
+div.jqcloud span.l10 {
+	font-size: 2.0em;
+	color: #228b22;
+ 
+}
+div.jqcloud span.l9 {
+	font-size: 1.8em;
+	color: #389638;
+ 
+}
+div.jqcloud span.l8 {
+	font-size: 1.6em;
+	color: #4ba04b;
+ 
+}
+div.jqcloud span.l7 {
+	font-size: 1.4em;
+	color: #5da95d;
+ 
+}
+div.jqcloud span.l6 {
+	font-size: 1.2em;
+	color: #6db16d;
+}
+div.jqcloud span.l5 {
+	font-size: 1.0em;
+	color: #7bb87b;
+}
+div.jqcloud span.l4 {
+	font-size: 0.8em;
+	color: #88bf88;
+ 
+}
+div.jqcloud span.l3 {
+	font-size: 0.8em;
+	color: #9dca9d;
+ 
+}
+div.jqcloud span.l2 {
+	font-size: 0.8em;
+	color: #a6cfa6;
+ 
+}
+div.jqcloud span.l1 {
+	font-size: 0.8em;
+	color: #aed3ae;
+ 
+}
+
+
+div.jqcloud span.m10 {
+  display: block;  
+  height:90px;
+  width:90px;
+
+}
+.m10 img{
+    width: 100%;
+    height: 100%;
+}
+
+div.jqcloud span.m9 {
+  display: block;    
+  height:70px;
+  width:70px;
+
+
+}
+.m9 img
+{
+    width: 100%;
+     height:100%;
+}
+div.jqcloud span.m8 {
+  display: block;    
+  height:60px;
+  width:60px;
+
+}
+.m8 img
+{
+    width: 100%;
+    height:100%;
+}
+div.jqcloud span.m7 {
+  display:block;  
+  height:50px;
+  width:50px;
+
+}
+.m7 img
+{
+    width: 100%;
+    height:100%;
+}
+div.jqcloud span.m6 {
+  display:block;  
+  height:40px;
+  width:40px;
+}
+.m6 img
+{
+    width: 100%;
+    height:100%;
+}
+
+div.jqcloud span.m5 {
+  display: block;  
+  height:40px;
+  width:40px;
+}
+.m5 img
+{
+    width: 100%;
+    height:100%;
+}
+div.jqcloud span.m4 {
+    display: block;  
+    height:40px;
+  width:40px;
+
+}
+.m4 img
+{
+    width: 100%;
+    height:100%;
+}
+div.jqcloud span.m3 {
+  display:block;  
+  height:30px;
+  width:30px;
+}
+.m3 img
+{
+    width: 100%;
+    height:100%;
+}
+
+div.jqcloud span.m2 {
+  display:block;  
+  height:30px;
+  width:30px;
+
+}
+.m2 img
+{
+    width: 100%;
+    height:100%;
+}
+div.jqcloud span.m1 {
+  display:block;  
+  height:30px;
+  width:30px;
+
+}
+.m1 img
+{
+    width: 100%;
+    height:100%;
+}
+
+
+div.jqcloud span.v10 {
+	font-size: 2.0em;
+	color: #FF0000;
+ 
+}
+div.jqcloud span.v9 {
+	font-size: 1.8em;
+	color: #FF1919;
+ 
+}
+div.jqcloud span.v8 {
+	font-size: 1.6em;
+	color: 	#FF3333;
+ 
+}
+div.jqcloud span.v7 {
+	font-size: 1.4em;
+	color: #FF4D4D;
+ 
+}
+div.jqcloud span.v6 {
+	font-size: 1.2em;
+	color: #FF6666;
+}
+div.jqcloud span.v5 {
+	font-size: 1.0em;
+	color: #FF8080;
+}
+div.jqcloud span.v4 {
+	font-size: 0.8em;
+	color: #FF9999;
+ 
+}
+div.jqcloud span.v3 {
+	font-size: 0.8em;
+	color: #FFB2B2;
+ 
+}
+div.jqcloud span.v2 {
+	font-size: 0.8em;
+	color: #FFB2B2;
+ 
+}
+div.jqcloud span.v1 {
+	font-size: 0.8em;
+	color: #FFB2B2;
+ 
+}
+
+div.jqcloud span.x10 {
+  display: block;  
+  height:90px;
+  width:90px;
+
+}
+.x10 img{
+    width: 100%;
+    height: 100%;
+}
+
+.x10 a::before{
+    color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x9 {
+  display: block;    
+  height:70px;
+  width:70px;
+
+
+}
+.x9 img
+{
+    width: 100%;
+     height:100%;
+}
+
+.x9 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x8 {
+  display: block;    
+  height:60px;
+  width:60px;
+
+}
+.x8 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x8 a::before{
+ color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%; 
+}
+
+
+div.jqcloud span.x7 {
+  display:block;  
+  height:50px;
+  width:50px;
+
+}
+.x7 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x7 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x6 {
+  display:block;  
+  height:40px;
+  width:40px;
+}
+.x6 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x6 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x5 {
+  display: block;  
+  height:40px;
+  width:40px;
+}
+.x5 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x5 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+
+div.jqcloud span.x4 {
+    display: block;  
+    height:40px;
+  width:40px;
+
+}
+.x4 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x4 a::before{
+color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x3 {
+  display:block;  
+  height:30px;
+  width:30px;
+}
+.x3 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x3 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+
+div.jqcloud span.x2 {
+  display:block;  
+  height:30px;
+  width:30px;
+
+}
+.x2 img
+{
+    width: 100%;
+    height:100%;
+}
+
+.x2 a::before{
+   color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}
+div.jqcloud span.x1 {
+  display:block;  
+  height:30px;
+  width:30px;
+
+}
+.x1 img
+{
+    width: 100%;
+    height:100%;
+}
+.x1 a::before{
+  color: white;
+    content:"\25B6";
+    opacity: 0.4;
+    position: absolute;
+    text-shadow: 0 3px black;
+    z-index: 100;
+    font-size:100%;
+    position:absolute;
+    top:50%; left:50%; 
+    width:100%;
+    height:100%;
+}

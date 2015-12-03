@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+        default-autowire="byName"
+        >
+
+    <context:annotation-config/>
+
+    <!-- Since we are spliting our jars then we need to define each
+        separately -->
+    <context:component-scan base-package="gr.imu.ntua"/>
+
+    <tx:annotation-driven/>
+
+    <!-- JSR303 -->
+    <mvc:annotation-driven/>
+
+    <!-- Resources -->
+    <mvc:default-servlet-handler/>
+
+    <context:property-placeholder
+            system-properties-mode="ENVIRONMENT"
+            location="classpath:system.properties"/>
+
+
+    <!--  Properties -->
+    <bean id="systemProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:system.properties"/>
+    </bean>
+
+    <!-- Keeping this here for reference -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter">
+            <bean
+                    class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="false" />
+                <property name="generateDdl" value="false" />
+                <property name="databasePlatform"
+                          value="org.hibernate.dialect.MySQLDialect" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+
+    <!--  The documentation specified that this will inject the the persistence unit into the class -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+    <!-- freemarker config -->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/freemarker/"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="locale">en_US</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="order" value="1"/>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="cache" value="false"/>
+        <property name="suffix" value=".ftl"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="exposeSessionAttributes"><value>true</value></property>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:uimessages"/>
+    </bean>
+
+    <bean id="userTracking" class="gr.imu.ntua.tweetinspire.services.bean.HeavyUserTracking" scope="session">
+        <aop:scoped-proxy/>
+    </bean>
+
+    <bean id="configurationPrintingService" class="gr.imu.ntua.tweetinspire.services.ConfigurationPrintingServiceImpl"/>
+    <bean id="twitterService" class="gr.imu.ntua.tweetinspire.services.TwitterServiceImpl"/>
+    <bean id="diversifyService" class="gr.imu.ntua.tweetinspire.services.BingDiversifyService" />
+    <bean id="crawlDiversifyService" class="gr.imu.ntua.tweetinspire.services.WaagDiversifyService" />
+    <bean id="sessionPersistService" class="gr.imu.ntua.tweetinspire.services.FakePersistService"/>
+    <bean id="termExtractService" class="gr.imu.ntua.tweetinspire.services.LuceneTermExtractService"/>
+    <bean id="crawlSearchService" class="gr.imu.ntua.tweetinspire.services.CrawlSearchServiceImpl"/>
+    <!--<bean id="nlpService" class="gr.imu.ntua.tweetinspire.services.NLPServiceImpl"/>-->
+
+    <bean id="simpleSearchTermService" class="gr.imu.ntua.tweetinspire.services.SimpleSearchTermServiceImpl"/>
+    <bean id="persistanceService" class="gr.imu.ntua.tweetinspire.services.db.PersistanceServiceImpl"/>
+    <bean id="imagesService" class="gr.imu.ntua.tweetinspire.services.ImagesServiceImpl"/>
+    <bean id="personalSearchTermService" class="gr.imu.ntua.tweetinspire.services.PersonalSearchTermServiceImpl"/>
+    <bean id="youTubeService" class="gr.imu.ntua.tweetinspire.services.YouTubeServiceImpl"/>
+    <bean id="bagOfWordsService" class="gr.imu.ntua.tweetinspire.services.BagOfWordsServiceImpl"/>
+    <bean id="allresultsIntegrationService" class="gr.imu.ntua.tweetinspire.services.AllResultsIntegrationServiceImpl"/>
+    <bean id="socialRecommenderService" class="gr.imu.ntua.tweetinspire.services.SocialRecommenderServiceImpl"/>
+    <bean id="recommenderService" class="gr.imu.ntua.tweetinspire.services.RecommenderServiceImpl"/>
+    <!---->
+
+    <import resource="classpath:diverisification-services.xml"/>
+
+</beans>

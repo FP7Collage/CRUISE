@@ -1,0 +1,13 @@
+.idea
+tomcat
+target
+*.iml
+twitter4j.properties
+system.properties
+ng-configuration.xml
+nbactions.xml
+gr.imu.ntua.cruise.ui/src/main/resources/system.properties
+gr.imu.ntua.cruise.ui/src/main/resources/academic-accounts.xml
+gr.imu.ntua.cruise.ui/src/main/resources/diverisification-services.xml
+gr.imu.ntua.cruise.ui/src/main/resources/twitter-people-nl.txt
+gr.imu.ntua.cruise.ui/src/main/resources/twitter-people.txt

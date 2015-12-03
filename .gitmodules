@@ -1,0 +1,3 @@
+[submodule "frameworks/bootstrapx-clickover"]
+	path = frameworks/bootstrapx-clickover
+	url = git://github.com/lecar-red/bootstrapx-clickover.git

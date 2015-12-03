@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>core</artifactId>
+        <groupId>gr.imu.ntua.cruise</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>db</artifactId>
+    <name>${project.groupId}.${project.artifactId}</name>
+
+    <properties>
+
+        <db.migration.host>localhost</db.migration.host>
+        <db.migration.port>3306</db.migration.port>
+        <db.migration.db></db.migration.db>
+        <db.migration.username></db.migration.username>
+        <db.migration.password></db.migration.password>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>code</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+            <properties>
+                <db.migration.host>localhost</db.migration.host>
+                <db.migration.db>cruise</db.migration.db>
+                <db.migration.username>cruise</db.migration.username>
+                <db.migration.password>1234</db.migration.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>test</value>
+                </property>
+            </activation>
+            <properties>
+                <db.migration.host>localhost</db.migration.host>
+                <db.migration.db>cruise_test</db.migration.db>
+                <db.migration.username>cruise</db.migration.username>
+                <db.migration.password>1234</db.migration.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>prod</value>
+                </property>
+            </activation>
+            <properties>
+                <db.migration.host>localhost</db.migration.host>
+                <db.migration.db>cruise</db.migration.db>
+                <db.migration.username>cruise</db.migration.username>
+                <db.migration.password>1234</db.migration.password>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.carbonfive.db-support</groupId>
+                        <artifactId>db-migration-maven-plugin</artifactId>
+                        <version>0.9.9-m5</version>
+                        <configuration>
+                            <url>jdbc:mysql://${db.migration.host}:${db.migration.port}/cruise_test?allowMultiQueries=true</url>
+                            <username>${db.migration.username}</username>
+                            <password>${db.migration.password}</password>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>reset</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>mysql</groupId>
+                                <artifactId>mysql-connector-java</artifactId>
+                                <version>${mysql.mysql-connector-java.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.carbonfive.db-support</groupId>
+                <artifactId>db-migration-maven-plugin</artifactId>
+                <version>0.9.9-m5</version>
+                <configuration>
+                    <url>jdbc:mysql://${db.migration.host}:${db.migration.port}/${db.migration.db}?allowMultiQueries=true</url>
+                    <username>${db.migration.username}</username>
+                    <password>${db.migration.password}</password>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.mysql-connector-java.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.existanze.libraries</groupId>
+            <artifactId>orm</artifactId>
+        </dependency>
+
+        <!-- Needed for the time comparison -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
